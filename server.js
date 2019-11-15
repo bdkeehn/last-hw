@@ -27,7 +27,7 @@ app.set("view engine", "handlebars");
 
 
 // Connect to the Mongo DB
-mongoose.connect(process.env.MONGOD_URI, { useNewUrlParser: true });
+mongoose.connect(process.env.MONGODB_URI, { useNewUrlParser: true });
 
 // Routes
 app.get("/", function(req, res) {
