@@ -27,7 +27,7 @@ app.set("view engine", "handlebars");
 
 
 // Connect to the Mongo DB
-mongoose.connect("mongodb://<dbuser>:<dbpassword>@dbh23.mlab.com:27237/heroku_234q4kgd", { useNewUrlParser: true });
+mongoose.connect(process.env.MONGOD_URI, { useNewUrlParser: true });
 
 // Routes
 app.get("/", function(req, res) {
