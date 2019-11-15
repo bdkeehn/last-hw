@@ -4,7 +4,7 @@ var cheerio = require ("cheerio");
 var axios = require ("axios");
 var exphbs = require('express-handlebars');
 
-var PORT = 3000;
+var PORT = process.env.PORT || 3000;
 
 // Requiring the `User` model for accessing the `users` collection
 var db = require("./models");
@@ -27,7 +27,7 @@ app.set("view engine", "handlebars");
 
 
 // Connect to the Mongo DB
-mongoose.connect("mongodb://localhost/custommethods", { useNewUrlParser: true });
+mongoose.connect("mongodb://<dbuser>:<dbpassword>@dbh23.mlab.com:27237/heroku_234q4kgd", { useNewUrlParser: true });
 
 // Routes
 app.get("/", function(req, res) {
